@@ -8,9 +8,34 @@ Tenda AC1206 `ate_Tenda_mfg_check_usb3` and `ate_Tenda_mfg_check_usb` has stack 
 
 # Affected version
 
+AC series (AC1206, AC7, AC23 have been submitted separately)
 
+11AC Routers-Tenda US (tendacn.com)
 
-V15.03.06.23 and earlier
+G series
+
+Wired Enterprise Router-Tenda US (tendacn.com)
+
+W series
+
+In-wall AP-Tenda US (tendacn.com)
+
+I series
+
+Ceiling AP-Tenda US (tendacn.com)
+
+O series
+
+Outdoor CPE-Tenda US (tendacn.com)
+
+A series
+
+Range Extenders-Tenda US (tendacn.com)
+
+VD series
+
+xDSL Modem Routers-Tenda US (tendacn.com)
+
 
 # details
 
