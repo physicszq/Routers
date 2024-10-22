@@ -69,7 +69,7 @@ When `command` is `Tenda_mfg`and `arg` is `check` or `check USB3.0`, the `ate_Te
 
 
 
-in `readUsb` function,  the variale `mntFileName` size is ***512*** char, but , there use `sprintf` function to format the two variables into `mntFileName`, there is no ckeck , And will cause stack overflow. maybe cause RCE, furtherly
+in `readUsb` function,  the variale `mntFileName` size is ***512*** char, but , there use `sprintf` function to format the two variables into `mntFileName`, there is no ckeck , And will cause stack overflow. 
 
 ![](05.png)
 
@@ -77,9 +77,14 @@ in `readUsb` function,  the variale `mntFileName` size is ***512*** char, but , 
 
 ![](06.png)
 
+there is no protection mechanism, causing ***RCE*** is OK, furtherly
+
+![](08.png)
+
 
 find that, the child thread `300` crash
 ![](07.png)
+
 
 poc:
 
