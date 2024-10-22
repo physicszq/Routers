@@ -52,6 +52,10 @@ in `readUsb` function,  the variale `mntFileName` size is ***512*** char, but , 
 
 ![](06.png)
 
+
+find that, the child thread `300` crash
+![](07.png)
+
 poc:
 
 ```python
