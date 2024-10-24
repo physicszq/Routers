@@ -47,7 +47,7 @@ When accessing `url:/goform/ate`, `TendaAte` will be called
 
 
 
-The `TendaAte` function creates a thread and calls `ate_main_handle`, but, the recv_buf stack var size is ***4096***,  and recv from socket most ***0x1000***
+The `TendaAte` function creates a thread and calls `ate_main_handle`, but, the recv_buf stack var size is ***4096***,  and recv from socket at most ***0x1000***
 
 ![](000.png)
 
@@ -69,7 +69,7 @@ When `command` is `Tenda_mfg`and `arg` is `check` or `check USB3.0`, the `ate_Te
 
 
 
-in `readUsb` function,  the variale `mntFileName` size is ***512*** char, but , there use `sprintf` function to format the two variables into `mntFileName`, there is no ckeck , And will cause stack overflow. 
+in `readUsb` function,  the variale `mntFileName` size is ***512*** char, but the variale `fileName`'s size is ***0x1000*** at most , there use `sprintf` function to format the two variables (`mountpoint` and `fileName`) into `mntFileName`, there is no ckeck , And will cause stack overflow. 
 
 ![](05.png)
 
