@@ -69,7 +69,7 @@ When `command` is `Tenda_mfg`and `arg` is `check` or `check USB3.0`, the `ate_Te
 
 
 
-in `readUsb` function,  the variale `mntFileName` size is ***512*** char, but the variale `fileName`'s size is ***0x1000*** at most , there use `sprintf` function to format the two variables (`mountpoint` and `fileName`) into `mntFileName`, there is no ckeck , And will cause stack overflow. 
+in `readUsb` function,  the variale `mntFileName` size is ***512*** char, but the variale `fileName`'s size is ***0x1000*** at most , there use `sprintf` function to format the two variables (`mountpoint` and `fileName`) into `mntFileName`, there is no check , And will cause stack overflow. 
 
 ![](05.png)
 
