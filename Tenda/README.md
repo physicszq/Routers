@@ -2,7 +2,7 @@
 
 
 
-Tenda AC1206 `ate_Tenda_mfg_check_usb3` and `ate_Tenda_mfg_check_usb` has stack overflow vulnerability. This vulnerability refer the CVE-2024-9793 (https://github.com/ixout/iotVuls/blob/main/Tenda/ate_command_injection/report.md) and I find another one
+Tenda AC1206 `ate_Tenda_mfg_check_usb3` and `ate_Tenda_mfg_check_usb` has stack overflow vulnerability. This vulnerability refers the CVE-2024-9793 (https://github.com/ixout/iotVuls/blob/main/Tenda/ate_command_injection/report.md) and I find another one
 
 [firmware download](https://static.tenda.com.cn/tdcweb/download/uploadfile/AC1206/US_AC1206V1.0RTL_V15.03.06.23_multi_TD01.zip)
 
@@ -67,11 +67,9 @@ When `command` is `Tenda_mfg`and `arg` is `"check"` or `"check USB3.0"`, the `at
 
 ![](04.png)
 
-You can find that the argment `arg`'s value, whose length is out of 512 Byte
-![](10.png)
 
 
-in `readUsb` function,  the variale `mntFileName` size is ***512*** char, but the variale `fileName`'s size is ***0x1000*** at most (`fileName` come from `arg` mentioned above) , there use `sprintf` function to format the two variables (`mountpoint` and `fileName`) into `mntFileName`, there is no check , And will cause stack overflow. 
+In `readUsb` function,  the variale `mntFileName` size is ***512*** char, but the variale `fileName`'s size is ***0x1000*** at most (`fileName` come from `arg` mentioned above) , there use `sprintf` function to format the two variables (`mountpoint` and `fileName`) into `mntFileName`, there is no check , And will cause stack overflow. 
 
 ![](05.png)
 
@@ -79,13 +77,17 @@ in `readUsb` function,  the variale `mntFileName` size is ***512*** char, but th
 
 ![](06.png)
 
-there is no protection mechanism, causing ***RCE*** is OK, furtherly
+There is no protection mechanism, causing ***RCE*** is OK, furtherly
 
 ![](08.png)
 
 
-find that, the child thread `300` crash
+Find that, the child thread `300` crash
 ![](07.png)
+
+
+We can find that the argment `arg`'s value, whose length is out of 512 Byte
+![](10.png)
 
 
 poc:
