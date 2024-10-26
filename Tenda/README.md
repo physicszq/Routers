@@ -67,6 +67,8 @@ When `command` is `Tenda_mfg`and `arg` is `"check"` or `"check USB3.0"`, the `at
 
 ![](04.png)
 
+You can find that the argment `arg`'s value, whose length is out of 512 Byte
+![](10.png)
 
 
 in `readUsb` function,  the variale `mntFileName` size is ***512*** char, but the variale `fileName`'s size is ***0x1000*** at most (`fileName` come from `arg` mentioned above) , there use `sprintf` function to format the two variables (`mountpoint` and `fileName`) into `mntFileName`, there is no check , And will cause stack overflow. 
