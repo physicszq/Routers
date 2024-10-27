@@ -86,7 +86,7 @@ Find that, the child thread `300` crash
 ![](07.png)
 
 
-We can find that the argment `arg`'s value, whose length is out of 512 Byte
+We can find that, in ate_Tenda_mfg_check_usb3 function, the argment `arg`'s value, whose length is out of 512 Byte
 ![](10.png)
 
 
