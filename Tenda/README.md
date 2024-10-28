@@ -2,7 +2,7 @@
 
 
 
-Tenda AC1206 `ate_Tenda_mfg_check_usb3` and `ate_Tenda_mfg_check_usb` has stack overflow vulnerability. This vulnerability refers the CVE-2024-9793 (https://github.com/ixout/iotVuls/blob/main/Tenda/ate_command_injection/report.md) and I find another one
+Tenda AC1206 `ate_Tenda_mfg_check_usb3` and `ate_Tenda_mfg_check_usb` has stack overflow vulnerability. This vulnerability refers the CVE-2024-9793 (https://github.com/ixout/iotVuls/blob/main/Tenda/ate_command_injection/report.md) and I find another one，and get a CVE number CVE-2024-10434 
 
 [firmware download](https://static.tenda.com.cn/tdcweb/download/uploadfile/AC1206/US_AC1206V1.0RTL_V15.03.06.23_multi_TD01.zip)
 
